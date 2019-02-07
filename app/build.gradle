@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+//apply plugin: 'io.fabric'
+apply from: '../deps.gradle'
+
+android {
+    def versionPropsFile = file('version.properties')
+    Properties versionProps = new Properties()
+
+    if (versionPropsFile.canRead()) {
+        versionProps.load(new FileInputStream(versionPropsFile))
+    } else {
+        versionProps['VERSION_CODE'] = '0'
+    }
+
+    def code = versionProps['VERSION_CODE'].toInteger() + 1.toInteger()
+
+    versionProps['VERSION_CODE'] = code.toString()
+    versionProps.store(versionPropsFile.newWriter(), null)
+
+    compileSdkVersion configVersion.sdk
+    defaultConfig {
+        applicationId "com.avanzaxeniaclubid.acxi.irfanirawansukirman"
+        minSdkVersion configVersion.minSdk
+        targetSdkVersion configVersion.sdk
+        versionCode configVersion.code
+        versionName configVersion.name
+        setProperty("archivesBaseName", "ACXI Mobile Apps" + versionName + "#" + code + "-"
+                + new Date().format('ddMMyy'))
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resConfigs "en", "id"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            postprocessing {
+                removeUnusedCode true
+                removeUnusedResources true
+                obfuscate true
+                optimizeCode true
+                debuggable false
+                proguardFile 'proguard-rules.pro'
+            }
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    flavorDimensions "levelApp"
+    productFlavors {
+        production {
+        }
+        development {
+            applicationIdSuffix '.development'
+        }
+    }
+}
+
+dependencies {
+    // Google support
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.support
+    implementation supportDependencies.design
+    implementation supportDependencies.recyclerView
+    implementation supportDependencies.cardView
+    implementation supportDependencies.kotlin
+
+    // Network n' debugging
+    implementation libraries.stetho
+    implementation libraries.retrofit
+    implementation libraries.retrofitRx2
+    implementation libraries.okhttp
+    implementation libraries.okhttpLogging
+
+    // Async
+    implementation libraries.rxAndroid
+    implementation libraries.rxJava
+
+    // Utils
+    implementation libraries.glide
+    implementation libraries.retrofitGson
+    implementation libraries.timberLog
+    implementation libraries.dagger
+    implementation libraries.daggerAndroid
+    implementation libraries.daggerSupport
+
+    kapt libraries.daggerCompiler
+    kapt libraries.daggerProcessor
+    kapt libraries.glideCompiler
+}

@@ -1,0 +1,138 @@
+ext {
+    gradleVersion = '3.3.1'
+    supportLibraryVersion = '28.0.0'
+    constraintLayoutVersion = '1.0.2'
+    espressoCoreVersion = '2.2.2'
+    okHttpVersion = '3.10.0'
+    retrofitVersion = '2.3.0'
+    daggerVersion = '2.16'
+    glideVersion = '4.8.0'
+    rxJavaVersion = '2.2.2'
+    rxAndroidVersion = '2.1.0'
+    mockitoVersion = '2.+'
+    mockitoKotlinVersion = '1.5.0'
+    butterKnifeVersion = '8.8.1'
+    readMoreVersion = '2.1.0'
+    relativeTimeVersion = '1.3.4'
+    jodaTimeVersion = '2.9.9'
+    kodaTimeVersion = '1.2.1'
+    multiDexVersion = '1.0.1'
+    ankoVersion = '0.10.4'
+    realmVersion = '5.0.0'
+    archLifecycleVersion = '1.1.1'
+    archRoomVersion = '1.1.1'
+    calligraphyVersion = '2.3.0'
+    picassoVersion = '2.71828'
+    playServicesVersion = '11.8.0'
+    crashlyticsVersion = '2.9.5'
+    kotlinVersion = '1.2.51'
+    jsoupVersion = '1.11.3'
+    tinyDancerVersion = '0.1.2'
+    chuckOkHttpLoggingVersion = '1.1.0'
+    circleImageViewVersion = '2.2.0'
+    timberVersion = '4.5.1'
+    zxingCore = '3.2.1'
+    zxingEmbedded = '3.5.0'
+
+    // APK naming conventions
+    formattedDate = new Date().format('ddMMyy')
+    // TODO: Change this to match real case
+    appName = "Lorem Bambang"
+
+    // TODO: Change this according to QA standardization
+    // Major -> Millions, Minor -> Thousands, Bugfix -> Hundreds, Build number -> tens. E.g 1.3.72#10 == 1,003,072,10
+    configVersion = [
+            code  : 100000010,
+            name  : "0.0.1",
+            sdk   : 28,
+            minSdk: 19
+    ]
+
+    supportDependencies = [
+            appCompat       : "com.android.support:appcompat-v7:${supportLibraryVersion}",
+            support         : "com.android.support:support-v4:${supportLibraryVersion}",
+            design          : "com.android.support:design:${supportLibraryVersion}",
+            recyclerView    : "com.android.support:recyclerview-v7:${supportLibraryVersion}",
+            cardView        : "com.android.support:cardview-v7:${supportLibraryVersion}",
+            constraintLayout: "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
+            multiDex        : "com.android.support:multidex:${multiDexVersion}",
+            customTabs      : "com.android.support:customtabs:${supportLibraryVersion}",
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"
+    ]
+
+    realmDep = [
+            lib  : "io.realm:realm-android-library:${realmVersion}@aar",
+            annot: "io.realm:realm-annotations:${realmVersion}",
+            proc : "io.realm:realm-annotations-processor:${realmVersion}",
+    ]
+
+    libraries = [
+            butterKnife             : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeAnnotation   : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            okhttp                  : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            okhttpLogging           : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+            chuckOkHttpLogging      : "com.readystatesoftware.chuck:library:${chuckOkHttpLoggingVersion}",
+            chuckOkHttpRealLogging  : "com.readystatesoftware.chuck:library-no-op:${chuckOkHttpLoggingVersion}",
+            glide                   : "com.github.bumptech.glide:glide:${glideVersion}",
+            glideOkhttp             : "com.github.bumptech.glide:okhttp-integration:${glideVersion}",
+            glideCompiler           : "com.github.bumptech.glide:compiler:${glideVersion}",
+            picasso                 : "com.squareup.picasso:picasso:${picassoVersion}",
+            retrofit                : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitRx              : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+            retrofitRx2             : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            retrofitGson            : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitScalar          : "com.squareup.retrofit2:converter-scalars:${retrofitVersion}",
+            rxAndroid               : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            rxJava                  : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            dagger                  : "com.google.dagger:dagger:${daggerVersion}",
+            daggerAndroid           : "com.google.dagger:dagger-android:${daggerVersion}",
+            daggerSupport           : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerProcessor         : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            daggerCompiler          : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            javaxAnnotation         : "javax.annotation:jsr250-api:1.0",
+            javaxInject             : 'javax.inject:javax.inject:1',
+            glassfishJavaxAnnotation: "org.glassfish:javax.annotation:10.0-b28",
+            readMore                : "com.borjabravo:readmoretextview:${readMoreVersion}",
+            relativeTime            : "com.github.curioustechizen.android-ago:library:${relativeTimeVersion}",
+            jodaTime                : "joda-time:joda-time:${jodaTimeVersion}",
+            kodaTime                : "com.github.debop:koda-time:${kodaTimeVersion}",
+            anko                    : "org.jetbrains.anko:anko:${ankoVersion}",
+            calligraphy             : "uk.co.chrisjenx:calligraphy:${calligraphyVersion}",
+            actionitembadge         : "com.mikepenz:actionitembadge:3.3.2@aar",
+            stetho                  : "com.facebook.stetho:stetho:1.5.0",
+            zoom                    : "com.jsibbold:zoomage:1.1.0",
+            crystalRangeSeekbar     : "com.crystal:crystalrangeseekbar:1.1.3",
+            jsoup                   : "org.jsoup:jsoup:${jsoupVersion}",
+            tinyDancer              : "com.github.brianPlummer:tinydancer:${tinyDancerVersion}",
+            circleImageView         : "de.hdodenhof:circleimageview:${circleImageViewVersion}",
+            timberLog               : "com.jakewharton.timber:timber:${timberVersion}",
+            zxingCore               : "com.google.zxing:core:${zxingCore}",
+            zxingEmbedded           : "com.journeyapps:zxing-android-embedded:${zxingEmbedded}"
+    ]
+
+    googleLibraries = [
+            psGcm          : "com.google.android.gms:play-services-gcm:${playServicesVersion}",
+            psMaps         : "com.google.android.gms:play-services-maps:${playServicesVersion}",
+            psLocs         : "com.google.android.gms:play-services-location:${playServicesVersion}",
+            psAuth         : "com.google.android.gms:play-services-auth:${playServicesVersion}",
+            androidMaps    : "com.google.maps.android:android-maps-utils:0.3.4",
+            fcm            : "com.google.firebase:firebase-messaging:${playServicesVersion}",
+            crashlytics    : "com.crashlytics.sdk.android:crashlytics:${crashlyticsVersion}",
+            archRoomRuntime: "android.arch.persistence.room:runtime:${archRoomVersion}",
+            archRoomRx     : "android.arch.persistence.room:rxjava2:${archRoomVersion}",
+            archRoomComp   : "android.arch.persistence.room:compiler:${archRoomVersion}",
+            archLcRuntime  : "android.arch.lifecycle:runtime:${archLifecycleVersion}",
+            archLcExt      : "android.arch.lifecycle:extensions:${archLifecycleVersion}",
+            archLcComp     : "android.arch.lifecycle:compiler:${archLifecycleVersion}",
+            archLcJava     : "android.arch.lifecycle:common-java8:${archLifecycleVersion}",
+            dataBinding    : "com.android.databinding:compiler:${gradleVersion}"
+    ]
+
+    testLibraries = [
+            junit        : "junit:junit:4.12",
+            junitRunner  : "com.android.support.test:runner:1.0.1",
+            espressoCore : "com.android.support.test.espresso:espresso-core:${espressoCoreVersion}",
+            mockito      : "org.mockito:mockito-core:${mockitoVersion}",
+            mockitoKotlin: "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}"
+    ]
+}
