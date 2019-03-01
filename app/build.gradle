@@ -51,7 +51,7 @@ android {
         }
     }
     dataBinding {
-        enabled = true
+        enabled = false
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -80,6 +80,12 @@ dependencies {
     implementation supportDependencies.cardView
     implementation supportDependencies.kotlin
 
+    // Google AAC
+    implementation googleLibraries.archRoomRuntime
+    implementation googleLibraries.archLcExt
+
+    kapt googleLibraries.archLcComp
+
     // Network n' debugging
     implementation libraries.stetho
     implementation libraries.retrofit
@@ -95,6 +101,8 @@ dependencies {
     implementation libraries.glide
     implementation libraries.retrofitGson
     implementation libraries.timberLog
+
+    // Utils.Dependency Injection
     implementation libraries.dagger
     implementation libraries.daggerAndroid
     implementation libraries.daggerSupport

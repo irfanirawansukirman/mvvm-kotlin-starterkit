@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#E3E3E3</color>
+    <color name="colorAccent">#008FED</color>
+
+    <color name="mainWhite">#FFFFFF</color>
+
+    <color name="greyBackgroundDefault">#424242</color>
+    <color name="greyBackgroundLight">#F2F2F2</color>
+    <color name="greyTitle">@color/greyIcon</color>
+    <color name="greyTitleDark">@color/greyIcon</color>
+    <color name="greySubtitle">#999999</color>
+    <color name="greyIcon">#666666</color>
+    <color name="greyDefault">#EEEEEE</color>
+    <color name="greyLigth">#dfdfdf</color>
+    <color name="greyTransparent50">#80424242</color>
+
+    <color name="yellowTags">#FECE7A</color>
+
+    <color name="orangeMain">#FD8C2D</color>
+
+    <color name="widget_labelled_spinner">#6D6D6D</color>
+
+    <color name="greenProfLight">#60B358</color>
+    <color name="greenProfDark">#009521</color>
+
+    <color name="blueSky">#BBDEFB</color>
+    <color name="blueProfLight">#51A7DA</color>
+    <color name="blueProfDark">#51A7DA</color>
 </resources>
