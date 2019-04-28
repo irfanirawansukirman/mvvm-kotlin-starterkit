@@ -6,7 +6,7 @@ data processing.
 
 ## Technology Used
 * [Support Libraries] (https://developer.android.com/topic/libraries/support-library) - Android Libraries
-* [Kotlin] (https://kotlinlang.org) - Programming Language
+* [Kotlin] (https://kotlinlang.org) - Programming Language + Kotlin DSL for dependencies managing
 * [MVVM] (https://codingwithmitch.com/blog/getting-started-with-mvvm-android/) - Project Pattern
 * [AAC] (https://developer.android.com/topic/libraries/architecture) - Room, MutableLiveData, ViewModel
 * [Retrofit] (https://square.github.io/retrofit/) - Http Client
