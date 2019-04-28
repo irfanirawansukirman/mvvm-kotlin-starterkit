@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.avanzaxeniaclubid.acxi.irfanirawansukirman">
+          package="com.myapp.irfanirawansukirman">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-            android:name=".AxciApp"
+            android:name="com.myapp.irfanirawansukirman.MyApp"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -14,11 +14,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
 
-        <meta-data
-                android:name="io.fabric.ApiKey"
-                android:value="261e27dc5baae72193fd64e849234ca4bcf6971d"/>
-
-        <activity android:name=".mvvm.movie.MovieActivity">
+        <activity android:name="com.myapp.irfanirawansukirman.mvvm.movie.MovieActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
