@@ -11,7 +11,7 @@ android {
         applicationId = AppConfigurations.applicationId
         minSdkVersion(AppConfigurations.ofNumberSdk.minimum)
         targetSdkVersion(AppConfigurations.ofNumberSdk.maximum)
-        versionCode = AppConfigurations.applicationBuild
+        versi onCode = AppConfigurations.applicationBuild
         versionName = AppConfigurations.applicationName
 
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
